@@ -15,10 +15,6 @@ jobs:
         with:
           java-version: 21
           distribution: temurin
-
-    - name: Set version in pom.xml to 2.3.4
-        run: |
-          sed -i '0,/<version>.*<\/version>/s//<version>2.3.4<\/version>/' pom.xml
  
       - name: Build with branch override
         run: mvn package --file pom.xml -Dproject.branch=master
